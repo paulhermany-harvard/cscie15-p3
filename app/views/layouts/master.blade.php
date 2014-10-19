@@ -29,6 +29,10 @@
     @section('PlaceHolderMain') 
     <div class="container">
 	
+		<div class="jumbotron">
+			@yield('PlaceHolderResult')
+        </div>
+	
 		<div class="row">
 			<div class="col-md-12">
 				<h1>@yield('PlaceHolderTitle')</h1>
