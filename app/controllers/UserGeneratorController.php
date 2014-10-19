@@ -4,7 +4,13 @@ class UserGeneratorController extends Controller {
 
 	public function generate() {
 	
-		return View::make('user-generator');
+		# from doc...
+		$faker = Faker\Factory::create();
+		
+		return View::make('user-generator') -> with(array(
+			'name' => $faker->name,
+			'address' => $faker->address
+		));
 	}
 	
 }
