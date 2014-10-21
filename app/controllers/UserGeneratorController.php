@@ -2,7 +2,7 @@
 
 class UserGeneratorController extends Controller {
 
-	public function generate() {
+	public function generate($userQty, $userProperty) {
 	
 		# from doc...
 		$faker = Faker\Factory::create();

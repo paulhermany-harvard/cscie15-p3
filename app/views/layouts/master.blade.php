@@ -12,6 +12,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	{{ HTML::script('js/lib/jquery-1.11.1.min.js') }}
+	{{ HTML::script('js/lib/bootstrap-3.2.0.min.js') }}
+	{{ HTML::script('js/app.js') }}
+	
     @yield('PlaceHolderAdditionalPageHead')
   </head>
   <body>
@@ -26,24 +30,22 @@
     </div>
     @show
 	
-    @section('PlaceHolderMain') 
+	@section('PlaceHolderMain')
     <div class="container">
 	
 		<div class="jumbotron">
 			@yield('PlaceHolderResult')
         </div>
 	
-		<div class="row">
-			<div class="col-md-12">
-				<h1>@yield('PlaceHolderTitle')</h1>
-			</div>
+		<h1>@yield('PlaceHolderTitle')</h1>
+		<p class="lead">@yield('PlaceHolderLeadCopy')</p>
+	
+		<div class="container">		
+			@yield('PlaceHolderMainForm')
 		</div>
 	
     </div>
-    @show
-
-	{{ HTML::script('js/lib/jquery-1.11.1.min.js') }}
-	{{ HTML::script('js/lib/bootstrap-3.2.0.min.js') }}
+	@show
     
   </body>
 </html>
