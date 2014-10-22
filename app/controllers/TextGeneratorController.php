@@ -16,6 +16,8 @@ class TextGeneratorController extends Controller {
             case 's': $result = '<p>'.implode(' ', $faker->sentences($textQty)).'</p>'; break;
 			case 'w': $result = '<p>'.implode(' ', $faker->words($textQty)).'</p>'; break;
         }
+
+		Input::merge(array('textQty'=>$textQty));
 		
 		return View::make('text-generator') -> with(
 			array(

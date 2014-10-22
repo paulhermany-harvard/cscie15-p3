@@ -16,7 +16,7 @@
 		
 		<div class="form-group">
 			<span>Limit to </span>
-			{{ Form::number('textQty', Input::get('limit_to'),
+			{{ Form::number('textQty', Input::get('textQty'),
 				array(
 					'min' => '1',
 					'max' => '10'
@@ -27,7 +27,7 @@
 					'paragraphs' => 'Paragraphs',
 					'sentences' => 'Sentences',
 					'words' => 'Words'
-				), 'paragraphs'
+				), Input::get('textType')
 			) }}
 		</div>
 	
