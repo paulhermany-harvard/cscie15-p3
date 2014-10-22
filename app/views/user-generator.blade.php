@@ -43,8 +43,8 @@
 			<span>Limit to </span>
 			{{ Form::number('userQty', Input::get('userQty'),
 				array(
-					'min' => '1',
-					'max' => '10'
+					'min' => $userQtyMin,
+					'max' => $userQtyMax
 				)
 			) }}
 			<span>user</span>
@@ -57,6 +57,14 @@
 				), Input::get('userProperty')
 			) }}
 		</div>
+	
+		<div class="form-group">
+			<ul class="list-unstyled errors">
+			  @foreach($errors->all() as $message)
+				<li><p class="text-danger">{{ $message }}</p></li>
+			  @endforeach
+			</ul>
+		</div>	
 	
 	    <div class="form-group">
 			{{ Form::submit('Regenerate',
