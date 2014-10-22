@@ -9,7 +9,7 @@ class UserGeneratorController extends Controller {
 		
 		$profiles = [];
 		
-		preg_match('/profile(?=s?)|name(?=s?)|email-address(?=(es)?)|phone-number(?=s?)/', $userProperty, $matches);
+		preg_match('/profile(?=s?)|name(?=s?)|email-address(?=(es)?)|phone-number(?=s?)|photo(?=s?)/', $userProperty, $matches);
 		$userProperty = $matches[0];
 		
 		for ($i = 0; $i < $userQty; $i++) {
@@ -26,6 +26,10 @@ class UserGeneratorController extends Controller {
 			
 			if($userProperty == 'phone-number' || $userProperty == 'profile') {
 				$profile['phone'] = $faker->phonenumber;
+			}
+			
+			if($userProperty == 'photo' || $userProperty == 'profile') {
+				$profile['photo'] = '';
 			}
 		
 			array_push($profiles, $profile);

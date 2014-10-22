@@ -25,7 +25,7 @@ Route::group(array('prefix' => 'generate'), function() {
 	Route::post('/{textQty}/{textSource}/{textType}', 'TextGeneratorController@generate');
 	
 	Route::pattern('userQty', '[0-9]+');
-	Route::pattern('userProperty', 'profiles?|names?|email-address(es)?|phone-numbers?');
+	Route::pattern('userProperty', 'profiles?|names?|email-address(es)?|phone-numbers?|photos?');
 	Route::get('/{userQty}/user/{userProperty}', 'UserGeneratorController@generate');
 	Route::post('/{userQty}/user/{userProperty}', 'UserGeneratorController@generate');
 });

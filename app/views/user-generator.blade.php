@@ -5,13 +5,30 @@
 @section('PlaceHolderLeadCopy', 'Magna ligula donec mollis massa porttitor ullamcorper risus eu platea fringilla habitasse, suscipit pellentesque donec est habitant vehicula tempor ultrices placerat sociosqu ultrices, consectetur ullamcorper tincidunt quisque tellus ante nostra euismod nec suspendisse.')
 
 @section('PlaceHolderResult')
-	@foreach ($profiles as $profile)
-		<p class="profile">
-			@if (isset($profile['name'])) <span class="name">{{ $profile['name'] }}</span> @endif
-			@if (isset($profile['email'])) <span class="email">{{ $profile['email'] }}</span> @endif
-			@if (isset($profile['phone'])) <span class="phone">{{ $profile['phone'] }}</span> @endif
-		</p>
-	@endforeach
+	<div class="container">
+	  @foreach ($profiles as $profile)
+		<div class="row profile">		
+		  @if (isset($profile['photo']))
+			<div class="col-md-2">
+				<img class="img-circle img-responsive photo" src="" border="0"/>
+			</div>
+		  @endif
+			<div class="col-md-10">
+			  @if (isset($profile['name']))
+				<h2 class="name">{{ $profile['name'] }}</h2>
+			  @endif
+				<p>  					
+				  @if (isset($profile['email']))
+					<span class="email">{{ $profile['email'] }}</span>
+				  @endif
+				  @if (isset($profile['phone']))
+					<span class="phone">{{ $profile['phone'] }}</span>
+				  @endif
+				</p>			  
+			</div>
+		</div>
+	  @endforeach
+	</div>
 @stop
 
 @section('PlaceHolderMainForm')
@@ -57,6 +74,18 @@
 				var userQty = $('input[name="userQty"]').val();
 				var userProperty = $('select[name="userProperty"]').val();
 				$(this).attr('action', '/generate/' + userQty + '/user/' + userProperty);
+			});
+			
+			$('.profile .photo').each(function() {
+				var img = $(this);
+				$.ajax({
+					url: 'http://api.randomuser.me/',
+					dataType: 'json',
+					success: function(data){
+						img.attr('src', data.results[0].user.picture.medium);
+					}
+				});
+				
 			});
 		});
 	</script>

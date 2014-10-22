@@ -6,6 +6,7 @@
     <title>@yield('PlaceHolderTitle', 'Developer\'s Best Friend') | CSCI E-15 Fall 2014 | Paul Hermany</title>
     
 	{{ HTML::style('css/lib/bootstrap-3.2.0.min.css') }}
+	{{ HTML::style('css/app.css') }}
     
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
