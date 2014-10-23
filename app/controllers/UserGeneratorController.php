@@ -11,7 +11,7 @@ class UserGeneratorController extends Controller {
 	 *
 	 * @return	text-generator view
 	**/
-	public function generate($userQty, $userType, $userProperty = 'profiles') {
+	public function generate($userQty, $userType, $userProperty) {
 	
 		// the result will either be an empty array or a collection of user "profiles"
 		$profiles = [];
@@ -23,7 +23,7 @@ class UserGeneratorController extends Controller {
 				'userProperty' => $userProperty
 			)
 		);
-	
+    
 		// get the full input array for form validation
 		$data = Input::all();
 		
@@ -90,8 +90,11 @@ class UserGeneratorController extends Controller {
 				// add the profile to the list of profiles
 				array_push($profiles, $profile);
 			}
-		}
-		
+            
+            // merge the singular user property back to the input array so the form will be loaded for plural routes
+            Input::merge( array('userProperty' => $userProperty) );
+        }
+        
 		// make the view with profiles, constraints, and validator
 		return View::make('user-generator') -> with(
 			array(

@@ -71,6 +71,9 @@ class TextGeneratorController extends Controller {
 				case 's': $result = '<p>'.implode(' ', $faker->sentences($textQty)).'</p>'; break;
 				case 'w': $result = '<p>'.implode(' ', $faker->words($textQty)).'</p>'; break;
 			}
+            
+            // merge the singular text type back to the input array so the form will be loaded for plural routes
+            Input::merge( array('textType' => $textType) );
 		}
 		
 		// make the view with result, constraints, and validator
