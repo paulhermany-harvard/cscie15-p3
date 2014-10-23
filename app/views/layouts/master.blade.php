@@ -6,6 +6,7 @@
     <title>@yield('PlaceHolderTitle', 'Developer\'s Best Friend') | CSCI E-15 Fall 2014 | Paul Hermany</title>
     
 	{{ HTML::style('css/lib/bootstrap-3.2.0.min.css') }}
+	{{ HTML::style('css/lib/bootstrap-theme.min.css') }}
 	{{ HTML::style('css/app.css') }}
     
     <!--[if lt IE 9]>
@@ -22,10 +23,23 @@
   <body>
     
 	@section('PlaceHolderNavBar') 
-    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <a class="navbar-brand" href="http://p3.local.paulhermany.me">Developer's Best Friend</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/generate/lorem-ipsum">Lorem Ipsum Text Generator</a></li>
+                    <li><a href="/generate/users">User Profile Generator</a></li>
+                    <li><a href="/generate/passwords">XKCD-style Password Generator</a></li>
+                </ul>
             </div>
         </div>
     </div>

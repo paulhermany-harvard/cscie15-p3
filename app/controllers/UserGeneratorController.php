@@ -6,11 +6,12 @@ class UserGeneratorController extends Controller {
 	 * Generate random user using the Faker library
 	 *
 	 * @param	string	$userQty		The number of users to generate.
-	 * @param	string	$userProperty	The type of user to generate (profile, name, email, phone, photo)
+     * @param   string  $userType       The type of user to generate (user, users)
+	 * @param	string	$userProperty	The property of the user to generate (profile, name, email, phone, photo)
 	 *
 	 * @return	text-generator view
 	**/
-	public function generate($userQty, $userProperty) {
+	public function generate($userQty, $userType, $userProperty = 'profiles') {
 	
 		// the result will either be an empty array or a collection of user "profiles"
 		$profiles = [];
@@ -96,7 +97,14 @@ class UserGeneratorController extends Controller {
 			array(
 				'profiles' => $profiles,
 				'userQtyMin' => $userQtyMin,
-				'userQtyMax' => $userQtyMax
+				'userQtyMax' => $userQtyMax,
+                'userPropertyOptions' => array(
+                    'profile' => 'profile',
+                    'name' => 'name',
+                    'email-address' => 'email address',
+                    'phone-number' => 'phone number',
+                    'photo' => 'photo'
+                )
 			)
 		) -> withErrors($validator);
 	}

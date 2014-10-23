@@ -78,7 +78,12 @@ class TextGeneratorController extends Controller {
 			array(
 				'result' => $result,
 				'textQtyMin' => $textQtyMin,
-				'textQtyMax' => $textQtyMax
+				'textQtyMax' => $textQtyMax,
+                'textTypeOptions' => array(
+                    'paragraph' => 'paragraph',
+                    'sentence' => 'sentence',
+                    'word' => 'word'
+                )
 			)
 		) -> withErrors($validator);
 	}
