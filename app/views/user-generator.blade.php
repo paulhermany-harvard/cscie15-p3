@@ -38,7 +38,6 @@
             'method' => 'POST'
         )
     ) }}
-        
         <p class="instructions"><strong>Instructions:</strong> Set the number of users, select the property (or properties), and click the "Regenerate" button below.</p>
         
         <div class="form-group">

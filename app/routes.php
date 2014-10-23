@@ -4,20 +4,7 @@ Route::get('/', function() {
     return View::make('splash');
 });
 
-Route::get('/base64/encode', function() {
-    return View::make('tools.encoders.base64');
-});
-Route::post('/base64/encode', 'Base64Controller@encode');
-
-Route::get('/base64/decode', function() {
-    return View::make('tools.encoders.base64');
-});
-Route::post('/base64/decode', 'Base64Controller@decode');
-
 Route::group(array('prefix' => 'generate'), function() {
-    Route::get('/password', 'PasswordGeneratorController@generate');
-    Route::post('/password', 'PasswordGeneratorController@generate');
-    
     Route::pattern('textQty', '[0-9]+');
     Route::pattern('textSource', 'lorem(-ipsum)?');
     Route::pattern('textType', 'paragraphs?|sentences?|words?');
@@ -47,7 +34,7 @@ Route::group(array('prefix' => 'generate'), function() {
     Route::pattern('userType', 'users?');
     Route::pattern('userProperty', 'profiles?|names?|email-address(es)?|phone-numbers?|photos?');
 
-    // redirect /user and /users to their default quantities
+    // redirect /user and /users to their default routes
     Route::get('/{userType}', function($userType) {
         $userQty = substr($userType, -1) == 's' ? 3 : 1;
         return Redirect::to("/generate/$userQty/$userType");

@@ -9,7 +9,7 @@ class UserGeneratorController extends Controller {
      * @param   string  $userType       The type of user to generate (user, users)
 	 * @param	string	$userProperty	The property of the user to generate (profile, name, email, phone, photo)
 	 *
-	 * @return	text-generator view
+	 * @return	user-generator view
 	**/
 	public function generate($userQty, $userType, $userProperty) {
 	

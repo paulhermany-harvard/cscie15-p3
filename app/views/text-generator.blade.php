@@ -56,7 +56,7 @@
             $('input[name="textQty"]').keyup(function() {
                 fixGrammar('select[name="textType"] option', $(this).val());
             });
-            fixGrammar('select[name="textType"] option', $('select[name="textType"]').val());
+            fixGrammar('select[name="textType"] option', $('input[name="textQty"]').val());
             
             $('select[name="textType"]').change(function() {
                 var textType = $(this).val();

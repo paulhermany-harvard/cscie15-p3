@@ -32,13 +32,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://p3.local.paulhermany.me">Developer's Best Friend</a>
+                <a class="navbar-brand" href="http://p3.paulhermany.me">Developer's Best Friend</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/generate/lorem-ipsum">Lorem Ipsum Text Generator</a></li>
                     <li><a href="/generate/users">User Profile Generator</a></li>
-                    <li><a href="/generate/passwords">XKCD-style Password Generator</a></li>
                 </ul>
             </div>
         </div>
@@ -48,17 +47,15 @@
 	@section('PlaceHolderMain')
     <div class="container">
 	
-		<div class="jumbotron">
-			@yield('PlaceHolderResult')
+        <div class="jumbotron">
+            @yield('PlaceHolderResult')
         </div>
-	
-		<h1>@yield('PlaceHolderTitle')</h1>
-		<p class="lead">@yield('PlaceHolderLeadCopy')</p>
-	
-		<div class="container">		
-			@yield('PlaceHolderMainForm')
-		</div>
-	
+    
+        <h1>@yield('PlaceHolderTitle')</h1>
+        <p class="lead">@yield('PlaceHolderLeadCopy')</p>
+   
+		@yield('PlaceHolderMainForm')
+        
     </div>
 	@show
     
