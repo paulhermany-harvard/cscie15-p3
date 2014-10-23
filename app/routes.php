@@ -24,7 +24,7 @@ Route::group(array('prefix' => 'generate'), function() {
     
     // redirect /lorem-ipsum to the default route
     Route::get('/lorem-ipsum', function() {
-        return Redirect::to("/generate/2/lorem-ipsum/paragraph");
+        return Redirect::to("/generate/3/lorem-ipsum/paragraphs");
     });
     
     // set route using text pluralization filter
@@ -49,7 +49,7 @@ Route::group(array('prefix' => 'generate'), function() {
 
     // redirect /user and /users to their default quantities
     Route::get('/{userType}', function($userType) {
-        $userQty = substr($userType, -1) == 's' ? 10 : 1;
+        $userQty = substr($userType, -1) == 's' ? 3 : 1;
         return Redirect::to("/generate/$userQty/$userType");
     });
 

@@ -65,11 +65,15 @@ class TextGeneratorController extends Controller {
 			// create a new instance of the Faker
 			$faker = Faker\Factory::create();
 
+			// use regex with non-capturing lookahead assertion to get the text type
+			preg_match('/paragraph(?=s?)|sentence(?=s?)|word(?=s?)/', $textType, $matches);
+			$textType = $matches[0];
+            
 			// generate the random text based on selected type
-			switch($textType[0]) {
-				case 'p': $result = '<p>'.implode('</p><p>', $faker->paragraphs($textQty)).'</p>'; break;
-				case 's': $result = '<p>'.implode(' ', $faker->sentences($textQty)).'</p>'; break;
-				case 'w': $result = '<p>'.implode(' ', $faker->words($textQty)).'</p>'; break;
+			switch($textType) {
+				case 'paragraph': $result = '<p>'.implode('</p><p>', $faker->paragraphs($textQty)).'</p>'; break;
+				case 'sentence': $result = '<p>'.implode(' ', $faker->sentences($textQty)).'</p>'; break;
+				case 'word': $result = '<p>'.implode(' ', $faker->words($textQty)).'</p>'; break;
 			}
             
             // merge the singular text type back to the input array so the form will be loaded for plural routes
