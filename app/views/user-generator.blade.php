@@ -10,7 +10,7 @@
         <div class="row profile">       
           @if (isset($profile['photo']))
             <div class="col-md-2">
-                <img class="img-circle img-responsive photo" src="" border="0"/>
+                <img alt="photo" class="img-circle img-responsive photo" src="#"/>
             </div>
           @endif
             <div class="col-md-10">
