@@ -38,6 +38,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/generate/lorem-ipsum">Lorem Ipsum Text Generator</a></li>
                     <li><a href="/generate/users">User Profile Generator</a></li>
+                    <li><a href="/text-encoder">Text Encoder</a></li>
                 </ul>
             </div>
         </div>

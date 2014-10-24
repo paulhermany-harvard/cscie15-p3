@@ -1,7 +1,5 @@
 @extends('layouts.master')
 
-@section('PlaceHolderLeadCopy', 'hello world')
-
 @section('PlaceHolderMain')
 <div class="container">
     <h3>Lorem Ipsum Text Generator</h3>
@@ -25,5 +23,17 @@
         <li><a href="/generate/5/user/phone-numbers">/generate/5/user/phone-numbers</a></li>
         <li><a href="/generate/5/user/photos">/generate/5/user/photos</a></li>
     </ul>
+    <hr />
+    <h3>Text Encoder</h3>
+    <p>This tool will encode or decode Base64, HTML, or URL text.</p>
+    <p><strong>URLs:</strong></p>
+    <ul>
+        <li><a href="/base64/encode">/base64/encode</a></li>
+        <li><a href="/base64/decode">/base64/decode</a></li>
+        <li><a href="/html/encode">/html/encode</a></li>
+        <li><a href="/html/decode">/html/decode</a></li>
+        <li><a href="/url/encode">/url/encode</a></li>
+        <li><a href="/url/decode">/url/decode</a></li>
+    </ul>    
 </div>
 @stop
