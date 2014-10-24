@@ -4,7 +4,24 @@ Route::get('/', function() {
     return View::make('splash');
 });
 
+// set the route pattern for the text encoder
+Route::pattern('encoding', 'base64|html|url');
+
+// redirect /text-encoder to the default view of the text encoder
+Route::get('text-encoder', function() {
+    return View::make('text-encoder');
+});
+
+// set get/post route for encoding
+Route::get('{encoding}/encode', 'TextEncoderController@encode');
+Route::post('{encoding}/encode', 'TextEncoderController@encode');
+
+// set get/post route for decoding
+Route::get('{encoding}/decode', 'TextEncoderController@decode'); 
+Route::post('{encoding}/decode', 'TextEncoderController@decode'); 
+
 Route::group(array('prefix' => 'generate'), function() {
+    // set the route patterns for the text generator
     Route::pattern('textQty', '[0-9]+');
     Route::pattern('textSource', 'lorem(-ipsum)?');
     Route::pattern('textType', 'paragraphs?|sentences?|words?');
@@ -30,6 +47,7 @@ Route::group(array('prefix' => 'generate'), function() {
         )
     );
  
+    // set the route patterns for the user generator
     Route::pattern('userQty', '[0-9]+');
     Route::pattern('userType', 'users?');
     Route::pattern('userProperty', 'profiles?|names?|email-address(es)?|phone-numbers?|photos?');

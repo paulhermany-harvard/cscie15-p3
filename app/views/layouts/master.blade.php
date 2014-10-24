@@ -47,9 +47,11 @@
 	@section('PlaceHolderMain')
     <div class="container">
 	
+        @section('PlaceHolderResultContainer')
         <div class="jumbotron">
             @yield('PlaceHolderResult')
         </div>
+        @show
     
         <h1>@yield('PlaceHolderTitle')</h1>
         <p class="lead">@yield('PlaceHolderLeadCopy')</p>

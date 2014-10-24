@@ -4,7 +4,7 @@
 <http://p3.paulhermany.me>
 
 ## Description
-This is an app that provides a lorem ipsum text generator and random user generator using the Laravel framework.
+This is an app that provides tools for developers including a lorem ipsum text generator, a random user generator, and a text endoder.
 
 The app has a RESTful structure where the URLs to each generator are descriptive and grammatically correct. For example, when requesting a single user, the property should be singular. Conversely, when requesting more than one, the property should be plural.
 
@@ -15,6 +15,8 @@ I will provide a demo during the Tuesday virtual section.
 No special instructions for this project.
 
 ## Third-party plug-ins/libraries
+
+This app uses the Laravel framework.
 
 | Name               | Version | Url                                   |
 | ------------------ | ------- | ------------------------------------- |
