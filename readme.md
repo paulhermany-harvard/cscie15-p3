@@ -25,6 +25,7 @@ This app uses the Laravel framework.
 | Faker              | 1.5.0   | https://github.com/fzaninotto/Faker   |
 | Html5Shiv          | 3.7.2   | https://code.google.com/p/html5shiv/  |
 | JQuery             | 1.11.1  | http://jquery.com/                    |
+| RandomUser         | 0.4.1   | http://api.randomuser.me/             |
 | Respond            | 1.4.2   | https://github.com/scottjehl/Respond/ |
 
 ### Implementation details
@@ -48,6 +49,10 @@ This app uses the Laravel framework.
 * JQuery
 
   This is a dependency for the Bootstrap and Bootstrap Validator library.
+
+* RandomUser
+
+  This website uses the RandomUser API (fetched via ajax) to generate photos for user profiles.
 
 * Respond
 
