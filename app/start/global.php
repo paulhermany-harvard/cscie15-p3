@@ -67,6 +67,16 @@ App::down(function()
 	return Response::make("Be right back!", 503);
 });
 
+/**
+ * Custom 404 - redirect to root
+**/
+App::missing(function($exception)
+{
+    return Redirect::to('/');
+});
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Require The Filters File
