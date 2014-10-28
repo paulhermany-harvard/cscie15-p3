@@ -62,9 +62,9 @@
                 var textType = $(this).val();
                 var max;
                 switch(textType) {
-                    case 'paragraphs': max = 10; break;
-                    case 'sentences': max = 100; break;
-                    case 'words': max = 1000; break;
+                    case 'paragraph': max = 10; break;
+                    case 'sentence': max = 100; break;
+                    case 'word': max = 1000; break;
                 }
                 $('input[name="textQty"]').attr('max', max);
             });
